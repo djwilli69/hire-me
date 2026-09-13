@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Douglas J. Williams — AI-Assisted Solutions Builder</title>
+<meta name="description" content="Douglas J. Williams — AI-Assisted Solutions Builder & Technical Product Owner. 28+ years in mission-critical operations, now delivering software with AI-assisted, spec-driven development.">
+<style>
+  :root{
+    --bg:#0b1220; --bg2:#0f1a2e; --card:#131f36;
+    --line:#22304d; --text:#e6edf6; --muted:#9fb0c9; --accent:#5ccfe6; --accent2:#7c5cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+  .accent{color:var(--accent)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(11,18,32,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+  nav .brand{font-weight:700;letter-spacing:.3px}
+  nav .links a{color:var(--muted);margin-left:18px;font-size:14px}
+  nav .links a:hover{color:var(--accent)}
+  @media(max-width:560px){nav .links{display:none}}
+
+  /* hero */
+  .hero{padding:70px 0 46px;background:radial-gradient(1200px 400px at 70% -50px,rgba(124,92,255,.18),transparent),linear-gradient(180deg,var(--bg2),var(--bg))}
+  .eyebrow{color:var(--accent);font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:12px;margin-bottom:12px}
+  .hero h1{font-size:clamp(34px,6vw,54px);line-height:1.05;letter-spacing:-1px;margin-bottom:10px}
+  .hero .role{font-size:clamp(16px,2.4vw,21px);color:var(--muted);font-weight:600;margin-bottom:18px}
+  .hero .pitch{font-size:clamp(15px,2vw,18px);color:var(--text);max-width:640px;margin-bottom:26px}
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:600;font-size:14px;border:1px solid var(--line);color:var(--text);transition:.15s}
+  .btn:hover{transform:translateY(-1px);border-color:var(--accent)}
+  .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#08101f;border:none}
+  .btn.primary:hover{opacity:.92}
+
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  .sec-title{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;font-weight:700}
+  h2.big{font-size:26px;margin-bottom:14px;letter-spacing:-.3px}
+  p.lead{color:var(--muted);max-width:680px}
+
+  /* stat row */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .stat .n{font-size:22px;font-weight:800;color:var(--accent)}
+  .stat .l{font-size:12px;color:var(--muted);margin-top:2px}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  /* timeline */
+  .tl{position:relative;margin-left:6px;padding-left:26px;border-left:2px solid var(--line)}
+  .tl .item{position:relative;padding-bottom:26px}
+  .tl .item::before{content:"";position:absolute;left:-34px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(92,207,230,.15)}
+  .tl .when{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+  .tl h3{font-size:17px;margin:2px 0 2px}
+  .tl .co{color:var(--accent);font-weight:600;font-size:14px;margin-bottom:6px}
+  .tl ul{margin-left:16px;color:var(--muted);font-size:14.5px}
+  .tl li{margin-bottom:3px}
+
+  /* project card */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card h3{font-size:19px;margin-bottom:4px}
+  .card .tags{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 12px}
+  .tag{font-size:12px;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:rgba(92,207,230,.06)}
+  .card p{color:var(--muted);font-size:14.5px;margin-bottom:12px}
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.skills{grid-template-columns:1fr}}
+  .skill{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .skill h4{color:var(--accent);font-size:13px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+  .skill p{color:var(--muted);font-size:14px}
+
+  /* resumes */
+  .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media(max-width:720px){.res-grid{grid-template-columns:repeat(2,1fr)}}
+  .res{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center;transition:.15s}
+  .res:hover{transform:translateY(-2px);border-color:var(--accent)}
+  .res .ic{font-size:26px}
+  .res .t{color:var(--text);font-weight:700;font-size:14px;margin-top:6px}
+  .res .s{color:var(--muted);font-size:12px;margin-top:2px}
+
+  footer{padding:40px 0 60px;border-top:1px solid var(--line);text-align:center;color:var(--muted)}
+  footer .btns{justify-content:center;margin-bottom:16px}
+  .note{font-size:12px;color:#66768f;margin-top:10px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Douglas <span class="accent">Williams</span></span>
+    <span class="links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#project">Project</a>
+      <a href="#resumes">Résumé</a>
+      <a href="#contact">Contact</a>
+    </span>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Open to fully remote roles</div>
+    <h1>Douglas J. Williams</h1>
+    <div class="role">AI-Assisted Solutions Builder · Technical Product Owner</div>
+    <p class="pitch">I take an idea, direct an AI coding agent to build it, and stay with it
+      through testing and debugging until it actually works. 28+ years in mission-critical
+      operations — now shipping software.</p>
+    <div class="btns">
+      <a class="btn primary" href="#resumes">↓ View Résumés</a>
+      <a class="btn" href="https://github.com/djwilli69/well-tracker-demo" target="_blank" rel="noopener">◆ See a project I built</a>
+      <a class="btn" href="mailto:djw8182@gmail.com">✉ Email me</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-title">About</div>
+    <h2 class="big">A builder who ships, backed by decades of operations depth.</h2>
+    <p class="lead">I'm not a from-scratch programmer — my strength is ownership end to end.
+      I define the vision and requirements for a tool, direct AI coding agents (Kiro) to build
+      it, and debug it through to a working, deployed result. Before this I spent 28+ years
+      running mission-critical SMS/MMS network platforms at Sprint and T-Mobile, so I understand
+      the systems software serves and I know when the output is right. I also own an oil &amp; gas
+      business, for which I built and run a full-stack management app.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">28+</div><div class="l">years in mission-critical ops</div></div>
+      <div class="stat"><div class="n">Billions</div><div class="l">messages/day on a tool I drove</div></div>
+      <div class="stat"><div class="n">Full-stack</div><div class="l">app shipped to production</div></div>
+      <div class="stat"><div class="n">Owner</div><div class="l">of an oil &amp; gas business</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-title">Experience</div>
+    <div class="tl">
+      <div class="item">
+        <div class="when">2022 – Present · Remote</div>
+        <h3>Senior PTC Applications Engineer</h3>
+        <div class="co">CPKC (Canadian Pacific Kansas City)</div>
+        <ul>
+          <li>Own the vision and delivery of internal tools for Positive Train Control — a safety-critical rail system.</li>
+          <li>Drove a company-wide event-analysis platform ingesting <b>billions of messages/day</b> for proactive problem isolation.</li>
+          <li>Deliver Python database-integration tools (SQL, Oracle) via AI-assisted, spec-driven development.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="when">Aug 2020 – Aug 2022</div>
+        <h3>ATS Senior Network Engineer</h3>
+        <div class="co">T-Mobile</div>
+        <ul>
+          <li>Product Lead for MCO and Kubernetes-containerized MCO handling SMS/MMS traffic.</li>
+          <li>Migrated Sprint traffic to a new Replica MCO environment; consolidated onto one network.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="when">Jul 1998 – Aug 2020</div>
+        <h3>Network Translations Specialist / NTAC Engineer</h3>
+        <div class="co">Sprint</div>
+        <ul>
+          <li>Built a virtual SMS/MMS platform (Mavenir, Rackspace); led SMS migration to IMS Core via SIP.</li>
+          <li>Saved Sprint <b>$1.2M</b> over three years via a vendor renegotiation; ran 24/7/365 support.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="when">Ongoing</div>
+        <h3>Owner</h3>
+        <div class="co">J&amp;T Cook Corporation (Oil &amp; Gas)</div>
+        <ul>
+          <li>Own and operate an oil &amp; gas business; built its full-stack management app with AI-assisted development.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="project">
+  <div class="wrap">
+    <div class="sec-title">Selected Project</div>
+    <div class="card">
+      <h3>Oil &amp; Gas Well-Tracker Application</h3>
+      <div class="co" style="color:var(--muted);font-size:13px">Built with Kiro · for my own business, J&amp;T Cook Corporation</div>
+      <div class="tags">
+        <span class="tag">React</span><span class="tag">Supabase / Postgres</span>
+        <span class="tag">Python</span><span class="tag">Vercel</span>
+        <span class="tag">AI spec-driven</span>
+      </div>
+      <p>A full-stack app to track oil &amp; gas working-interest investments — investment vs.
+        revenue, payout status, operator-statement ingestion, bank reconciliation, and tax
+        reporting. I owned the vision and requirements, directed AI to build it, and debugged
+        through to a live production deployment. The public repo is a sanitized copy with sample
+        data, and includes the steering docs and decision logs showing exactly how I work.</p>
+      <a class="btn primary" href="https://github.com/djwilli69/well-tracker-demo" target="_blank" rel="noopener">◆ View the code on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-title">How I Work</div>
+    <div class="skills">
+      <div class="skill"><h4>AI-Assisted Development</h4><p>Spec-driven builds, requirements definition, directing AI coding agents (Kiro), iterative testing &amp; debugging to a working result.</p></div>
+      <div class="skill"><h4>Product Ownership</h4><p>Turning a business need into a clear end-goal, scoping, seeing it through to delivery, and verifying the output against real-world requirements.</p></div>
+      <div class="skill"><h4>Tech I've Shipped With (AI-directed)</h4><p>React, Supabase (Postgres), Python data ingestion, Vercel deployment, SQL &amp; Oracle, HTML/CSS, Git/GitHub.</p></div>
+      <div class="skill"><h4>Operations Foundation</h4><p>28+ years mission-critical support, Linux/CLI, log analysis at scale, Kubernetes, virtualized SMS/MMS, IMS Core.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="resumes">
+  <div class="wrap">
+    <div class="sec-title">Résumé — pick a style</div>
+    <h2 class="big">Download my résumé</h2>
+    <p class="lead" style="margin-bottom:20px">Same content, four looks. The Standard version is the most ATS-friendly.</p>
+    <div class="res-grid">
+      <a class="res" href="resumes/Douglas_Williams_Resume_Standard.pdf" target="_blank"><div class="ic">📄</div><div class="t">Standard</div><div class="s">ATS-friendly</div></a>
+      <a class="res" href="resumes/Douglas_Williams_Resume_Modern.pdf" target="_blank"><div class="ic">✨</div><div class="t">Modern</div><div class="s">Clean &amp; bold</div></a>
+      <a class="res" href="resumes/Douglas_Williams_Resume_TwoColumn.pdf" target="_blank"><div class="ic">🗂️</div><div class="t">Two-Column</div><div class="s">Tech layout</div></a>
+      <a class="res" href="resumes/Douglas_Williams_Resume_Terminal.pdf" target="_blank"><div class="ic">💻</div><div class="t">Terminal</div><div class="s">Developer vibe</div></a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="sec-title" style="text-align:center">Get in touch</div>
+    <div class="btns">
+      <a class="btn primary" href="mailto:djw8182@gmail.com">✉ djw8182@gmail.com</a>
+      <a class="btn" href="tel:9139529176">📞 913-952-9176</a>
+      <a class="btn" href="https://github.com/djwilli69" target="_blank" rel="noopener">◆ GitHub</a>
+      <!-- LinkedIn: replace the href below with your profile URL, then re-deploy -->
+      <a class="btn" id="linkedin-btn" href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">in LinkedIn</a>
+    </div>
+    <div>Lee's Summit, MO · Open to fully remote roles</div>
+    <div class="note">Built and deployed with tools I use every day — GitHub + Vercel.</div>
+  </div>
+</footer>
+
+</body>
+</html>
