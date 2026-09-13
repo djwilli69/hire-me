@@ -66,6 +66,21 @@
   .tag{font-size:12px;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:rgba(92,207,230,.06)}
   .card p{color:var(--muted);font-size:14.5px;margin-bottom:12px}
 
+  /* case study */
+  .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+  @media(max-width:640px){.shots{grid-template-columns:1fr}}
+  .shot{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0a1526}
+  .shot img{width:100%;display:block}
+  .shot .ph{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;color:#56688a;font-size:12px;text-align:center;padding:10px}
+  .didyou{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  @media(max-width:640px){.didyou{grid-template-columns:1fr}}
+  .didyou .col{background:#0e1830;border:1px solid var(--line);border-radius:10px;padding:14px}
+  .didyou h5{font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+  .didyou .me h5{color:var(--accent)}
+  .didyou .ai h5{color:var(--accent2)}
+  .didyou ul{margin-left:16px;color:var(--muted);font-size:13.5px}
+  .didyou li{margin-bottom:3px}
+
   /* skills */
   .skills{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   @media(max-width:640px){.skills{grid-template-columns:1fr}}
@@ -106,14 +121,14 @@
   <div class="wrap">
     <div class="eyebrow">Open to fully remote roles</div>
     <h1>Douglas J. Williams</h1>
-    <div class="role">AI-Assisted Solutions Builder · Technical Product Owner</div>
-    <p class="pitch">I take an idea, direct an AI coding agent to build it, and stay with it
-      through testing and debugging until it actually works. 28+ years in mission-critical
-      operations — now shipping software.</p>
+    <div class="role">Technical Product Owner · AI-Assisted Software Delivery</div>
+    <p class="pitch">I turn business requirements into working software — defining the vision,
+      directing AI-assisted development to build it in Python and modern web tech, and testing
+      and debugging until it ships. Backed by 28+ years in mission-critical operations.</p>
     <div class="btns">
-      <a class="btn primary" href="#resumes">↓ View Résumés</a>
-      <a class="btn" href="https://github.com/djwilli69/well-tracker-demo" target="_blank" rel="noopener">◆ See a project I built</a>
-      <a class="btn" href="mailto:djw8182@gmail.com">✉ Email me</a>
+      <a class="btn primary" href="mailto:djw8182@gmail.com">✉ Hire me</a>
+      <a class="btn" href="#project">◆ See a project I built</a>
+      <a class="btn" href="#resumes">↓ Résumé</a>
     </div>
   </div>
 </header>
@@ -122,12 +137,13 @@
   <div class="wrap">
     <div class="sec-title">About</div>
     <h2 class="big">A builder who ships, backed by decades of operations depth.</h2>
-    <p class="lead">I'm not a from-scratch programmer — my strength is ownership end to end.
-      I define the vision and requirements for a tool, direct AI coding agents (Kiro) to build
-      it, and debug it through to a working, deployed result. Before this I spent 28+ years
-      running mission-critical SMS/MMS network platforms at Sprint and T-Mobile, so I understand
-      the systems software serves and I know when the output is right. I also own an oil &amp; gas
-      business, for which I built and run a full-stack management app.</p>
+    <p class="lead">My strength is ownership end to end. I take a business problem, define the
+      vision and requirements, direct AI-assisted development (Kiro) to build the solution in
+      Python and modern web tech, and stay with it through testing and debugging until it's a
+      working, deployed result. Before this I spent 28+ years running mission-critical SMS/MMS
+      network platforms at Sprint and T-Mobile, so I understand the systems software serves and
+      I know when the output is right. I also own an oil &amp; gas business, for which I built and
+      run a full-stack management app.</p>
     <div class="stats">
       <div class="stat"><div class="n">28+</div><div class="l">years in mission-critical ops</div></div>
       <div class="stat"><div class="n">Billions</div><div class="l">messages/day on a tool I drove</div></div>
@@ -183,7 +199,7 @@
 
 <section id="project">
   <div class="wrap">
-    <div class="sec-title">Selected Project</div>
+    <div class="sec-title">Case Study</div>
     <div class="card">
       <h3>Oil &amp; Gas Well-Tracker Application</h3>
       <div class="co" style="color:var(--muted);font-size:13px">Built with Kiro · for my own business, J&amp;T Cook Corporation</div>
@@ -192,11 +208,48 @@
         <span class="tag">Python</span><span class="tag">Vercel</span>
         <span class="tag">AI spec-driven</span>
       </div>
-      <p>A full-stack app to track oil &amp; gas working-interest investments — investment vs.
-        revenue, payout status, operator-statement ingestion, bank reconciliation, and tax
-        reporting. I owned the vision and requirements, directed AI to build it, and debugged
-        through to a live production deployment. The public repo is a sanitized copy with sample
-        data, and includes the steering docs and decision logs showing exactly how I work.</p>
+
+      <p><b>The problem.</b> Working-interest oil &amp; gas income arrives as a mess of operator
+        statements, checks, and bank activity. I needed one place to see what I'd invested in each
+        well, what had come back, whether it had paid out, and what it all meant at tax time.</p>
+
+      <p><b>What I built.</b> A full-stack web app: dashboard with company-wide totals and a
+        cash-flow timeline, per-well tracking, Python scripts that ingest operator PDF statements,
+        bank-statement reconciliation, document management, and tax reporting — all behind
+        magic-link auth with row-level security. Deployed to production on Vercel + Supabase.</p>
+
+      <div class="shots">
+        <div class="shot"><div class="ph">Screenshot 1 — Dashboard<br><span style="opacity:.6">(drop dashboard.png here)</span></div></div>
+        <div class="shot"><div class="ph">Screenshot 2 — Well detail<br><span style="opacity:.6">(drop well-detail.png here)</span></div></div>
+        <div class="shot"><div class="ph">Screenshot 3 — Reports/Tax<br><span style="opacity:.6">(drop reports.png here)</span></div></div>
+      </div>
+
+      <div class="didyou">
+        <div class="col me">
+          <h5>What I did</h5>
+          <ul>
+            <li>Defined the vision, data model, and every feature requirement</li>
+            <li>Wrote the steering docs &amp; conventions that guided the AI</li>
+            <li>Made the architecture calls (Supabase, auth model, access control)</li>
+            <li>Tested each feature against real statements and debugged until correct</li>
+            <li>Deployed and now run it in production for my business</li>
+          </ul>
+        </div>
+        <div class="col ai">
+          <h5>What Kiro (AI) did</h5>
+          <ul>
+            <li>Generated the React components and Python parsers from my specs</li>
+            <li>Wrote first-pass SQL schema &amp; migrations to my requirements</li>
+            <li>Produced boilerplate and wiring I reviewed and corrected</li>
+            <li>Iterated on fixes as I found issues in testing</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="font-size:13.5px;color:var(--muted);margin-top:12px">The public repo is a sanitized
+        copy with sample data. It includes the <b>steering docs and decision logs</b> — a direct
+        look at how I direct AI and make design calls.</p>
+
       <a class="btn primary" href="https://github.com/djwilli69/well-tracker-demo" target="_blank" rel="noopener">◆ View the code on GitHub</a>
     </div>
   </div>
@@ -216,11 +269,12 @@
 
 <section id="resumes">
   <div class="wrap">
-    <div class="sec-title">Résumé — pick a style</div>
+    <div class="sec-title">Résumé</div>
     <h2 class="big">Download my résumé</h2>
-    <p class="lead" style="margin-bottom:20px">Same content, four looks. The Standard version is the most ATS-friendly.</p>
-    <div class="res-grid">
-      <a class="res" href="resumes/Douglas_Williams_Resume_Standard.pdf" target="_blank"><div class="ic">📄</div><div class="t">Standard</div><div class="s">ATS-friendly</div></a>
+    <p class="lead" style="margin-bottom:18px">Start with the Standard version — it's clean and ATS-friendly. Alternate designs below have the same content.</p>
+    <a class="btn primary" style="font-size:15px;padding:14px 24px" href="resumes/Douglas_Williams_Resume_Standard.pdf" target="_blank">📄 Download Résumé (Standard PDF)</a>
+    <p style="color:var(--muted);font-size:12px;letter-spacing:1px;text-transform:uppercase;margin:22px 0 10px">Also available in other styles</p>
+    <div class="res-grid" style="grid-template-columns:repeat(3,1fr)">
       <a class="res" href="resumes/Douglas_Williams_Resume_Modern.pdf" target="_blank"><div class="ic">✨</div><div class="t">Modern</div><div class="s">Clean &amp; bold</div></a>
       <a class="res" href="resumes/Douglas_Williams_Resume_TwoColumn.pdf" target="_blank"><div class="ic">🗂️</div><div class="t">Two-Column</div><div class="s">Tech layout</div></a>
       <a class="res" href="resumes/Douglas_Williams_Resume_Terminal.pdf" target="_blank"><div class="ic">💻</div><div class="t">Terminal</div><div class="s">Developer vibe</div></a>
